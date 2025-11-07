@@ -1,9 +1,7 @@
-print(">>> 실행 중 파일:", __file__)
-
 import os
 import json
 import asyncio
-import discord-bot
+import discord
 from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
@@ -230,3 +228,4 @@ if not TOKEN:
     raise RuntimeError("DISCORD_TOKEN이 비어있어요 (.env 또는 Railway Variables 확인)")
 
 bot.run(TOKEN)
+
