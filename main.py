@@ -132,10 +132,7 @@ class SpectateView(discord.ui.View):
         await member.edit(nick=new_nick, reason="관전 활성화")
 
         await self.ephemeral_delete(interaction, "✅ 관전 모드 활성화!")
-        await interaction.channel.send(
-            f"{member.mention} `관전_` 붙였습니다.",
-            delete_after=AUTO_DELETE_SECONDS
-        )
+        
 
 
     # ===== 비활성화 =====
@@ -164,10 +161,7 @@ class SpectateView(discord.ui.View):
         await member.edit(nick=clean, reason="관전 비활성화")
 
         await self.ephemeral_delete(interaction, "✅ 관전 모드 해제됨.")
-        await interaction.channel.send(
-            f"{member.mention} `관전_` 뗐습니다.",
-            delete_after=AUTO_DELETE_SECONDS
-        )
+        
 
 
     # ===== 에페메랄(본인만 보이는 메시지도 자동 삭제) =====
@@ -228,4 +222,5 @@ if not TOKEN:
     raise RuntimeError("DISCORD_TOKEN이 비어있어요 (.env 또는 Railway Variables 확인)")
 
 bot.run(TOKEN)
+
 
